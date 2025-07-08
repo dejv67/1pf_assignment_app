@@ -1,7 +1,8 @@
-package com.davidkral.backend.DTO;
+package com.davidkral.backend.domain;
 
-import com.davidkral.backend.domain.ExchangeRate;
-
+import com.davidkral.backend.DTO.ExchangeRatesResponseV1;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,8 +10,10 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ExchangeRatesResponseV1 {
+@Entity
+public class ExchangeRate {
 
+    @Id
     private String shortName;
 
     private String validFrom;
@@ -41,8 +44,8 @@ public class ExchangeRatesResponseV1 {
 
     private double ecbMid;
 
-    public ExchangeRate toEntity() {
-        return new ExchangeRate(
+    public ExchangeRatesResponseV1 toDto(){
+        return new ExchangeRatesResponseV1(
                 getShortName(),
                 getValidFrom(),
                 getName(),
