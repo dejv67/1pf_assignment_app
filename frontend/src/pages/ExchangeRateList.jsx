@@ -10,9 +10,7 @@ const ExchangeRateList = (props) => {
                 <div className="ExchangeRate">
                     <ExchangeRate
                         classname={"ExchangeRate"}
-                        shortName={exchangeRate.shortName}
-                        name={exchangeRate.name}
-                        country={exchangeRate.country}
+                        exchangeRateData={exchangeRate}
                     />
                 </div>
             </div>
