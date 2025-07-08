@@ -1,0 +1,5 @@
+# IDE a systémové soubory
+.idea/
+*.iml
+.DS_Store
+.env
